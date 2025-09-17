@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kulshreshtha Sharma - Curriculum Vitae</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* --- Basic Styling (Light Theme) --- */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9; /* Soft light gray background */
+            color: #333333; /* Dark gray for text */
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: #ffffff; /* White container for content */
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Softer shadow for light theme */
+        }
+
+        /* --- Header Section --- */
+        .header {
+            text-align: center;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #dee2e6; /* Light gray border */
+            margin-bottom: 35px;
+        }
+        .profile-picture {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #20c997; /* Teal accent border */
+            box-shadow: 0 0 15px rgba(32, 201, 151, 0.3); /* Teal shadow */
+        }
+        .header h1 {
+            margin: 10px 0 5px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.2em;
+            color: #212529; /* Near-black for main name */
+            letter-spacing: 1px;
+        }
+        .header p {
+            margin: 8px 0;
+            font-size: 1.05em;
+            color: #6c757d; /* Muted gray for contact info */
+        }
+        .header a {
+            color: #20c997; /* Teal for links */
+            text-decoration: none;
+            margin: 0 8px;
+            transition: color 0.3s ease;
+        }
+        .header a:hover {
+            color: #17a2b8; /* Darker teal on hover */
+            text-decoration: underline;
+        }
+
+        /* --- Section Styling --- */
+        .section {
+            margin-bottom: 35px;
+        }
+        .section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2em;
+            color: #17a2b8; /* Darker teal for section titles */
+            padding-bottom: 12px;
+            border-bottom: 1px solid #dee2e6; /* Light gray border */
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section h2 span {
+            font-size: 1.2em;
+        }
+
+        /* --- Entry Styling (for Experience, Education, Projects) --- */
+        .entry {
+            margin-bottom: 28px;
+            background-color: #f8f9fa; /* Very light gray for entries */
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e9ecef; /* Subtle border for entries */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .entry:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+        .entry h3 {
+            margin: 0 0 5px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4em;
+            color: #343a40; /* Darker gray for entry titles */
+        }
+        .entry p {
+            margin: 5px 0;
+            color: #555555;
+        }
+        .entry .date, .entry .company {
+            font-style: italic;
+            color: #6c757d; /* Muted gray for dates/company */
+            font-size: 0.95em;
+        }
+        .entry ul {
+            padding-left: 25px;
+            margin-top: 15px;
+            list-style-type: disc;
+            color: #555555;
+        }
+        .entry li {
+            margin-bottom: 10px;
+        }
+        
+        /* --- Project Specific Styling --- */
+        .project-links a {
+            margin-right: 20px;
+            color: #17a2b8; /* Darker teal for project links */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .project-links a:hover {
+            color: #138496; /* Even darker teal on hover */
+            text-decoration: underline;
+        }
+        .tech-tags {
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tech-tags span {
+            display: inline-block;
+            background-color: #e9ecef; /* Light gray for tag background */
+            color: #495057; /* Dark text for tags */
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+        }
+
+        /* --- Skills Section --- */
+        .skills-container {
+            padding-left: 0;
+        }
+        .skills-container h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: #343a40; /* Dark gray for skill categories */
+            margin-top: 20px;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+        .skills-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skills-list li {
+            background-color: #20c997; /* Main teal accent for skills pills */
+            color: #ffffff; /* White text for skills */
+            padding: 9px 18px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .skills-list li:hover {
+            background-color: #17a2b8; /* Darker teal on hover */
+            transform: translateY(-3px);
+        }
+
+        /* --- Footer --- */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 1px solid #dee2e6; /* Light gray footer border */
+            font-size: 0.9em;
+            color: #6c757d; /* Muted gray for footer text */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <img src="image8.jpg" alt="Kulshreshtha Sharma Profile" class="profile-picture">
+            <h1>Kulshreshtha Sharma</h1>
+            <p>
+                Lucknow, Uttar Pradesh, India |
+                <a href="tel:+918604892947">+91 8604892947</a> |
+                <a href="mailto:ps4338360@gmail.com">ps4338360@gmail.com</a>
+            </p>
+             <p>
+                <a href="https://www.linkedin.com/in/kulshrestha-sharma-4a3847378" target="_blank">LinkedIn</a> |
+                <a href="https://github.com/potassium315" target="_blank">GitHub</a>
+             </p>
+        </header>
+
+        <section class="section">
+            <h2><span>📝</span> Career Objective</h2>
+            <p>
+                A highly motivated and enthusiastic Bachelor of Computer Applications student with a strong foundation in Java, Python, and front-end web development. Eager to apply my technical skills and passion for building efficient and user-friendly applications. I am a quick learner dedicated to contributing to a team and driving company success through hard work and a commitment to excellence.
+            </p>
+        </section>
+        
+        <section class="section">
+            <h2><span>🎓</span> Education</h2>
+            <div class="entry">
+                <h3>Bachelor of Computer Applications (BCA)</h3>
+                <p class="company">University of Lucknow | Lucknow, UP</p>
+                <p class="date">August 2025 - Present (Expected Graduation: 2028)</p>
+                <ul>
+                    <li>Focusing on core principles of software development, algorithms, and data structures.</li>
+                    <li>Actively seeking to apply theoretical knowledge to practical, real-world projects.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><span>🚀</span> Projects</h2>
+            <div class="entry">
+                <h3>E-commerce Website Frontend</h3>
+                <p>Developed a responsive and visually appealing front-end model for an e-commerce platform, focusing on a clean user interface and intuitive navigation for product pages and shopping cart functionality.</p>
+                <div class="tech-tags">
+                    <span>HTML</span> <span>CSS</span> <span>JavaScript</span>
+                </div>
+                <p class="project-links">
+                    <a href="https://github.com/potassium315" target="_blank">Source Code</a>
+                </p>
+            </div>
+            <div class="entry">
+                <h3>Interactive Photo Gallery</h3>
+                <p>Built a dynamic, front-end photo gallery using HTML, CSS, and JavaScript. Implemented features for image filtering and a responsive layout that adapts to various screen sizes.</p>
+                <div class="tech-tags">
+                    <span>HTML</span> <span>CSS</span> <span>JavaScript</span>
+                </div>
+                <p class="project-links">
+                    <a href="https://github.com/potassium315" target="_blank">Source Code</a>
+                </p>
+            </div>
+             <div class="entry">
+                <h3>UI/UX Design for SIH Hackathon</h3>
+                <p>Served as the UI/UX builder for my team during a Smart India Hackathon (SIH) event. Responsible for designing the user flow, creating wireframes, and presenting the project's interface to judges.</p>
+                <div class="tech-tags">
+                    <span>UI/UX Design</span> <span>Team Collaboration</span> <span>Presentation</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><span>🛠️</span> Technical Skills</h2>
+            <div class="skills-container">
+                <h4>Programming Languages</h4>
+                <ul class="skills-list">
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>C</li>
+                    <li>JavaScript</li>
+                </ul>
+                <h4>Web Development</h4>
+                <ul class="skills-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+                 <h4>Soft Skills</h4>
+                <ul class="skills-list">
+                    <li>Leadership</li>
+                    <li>Communication</li>
+                    <li>Public Speaking</li>
+                    <li>Teamwork</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2><span>🏆</span> Achievements & Awards</h2>
+            <div class="entry">
+                <h3>Rajya Puraskar - Bharat Scouts and Guides</h3>
+                <p class="company">State-level award</p>
+                <p>The highest state-level award from the Bharat Scouts and Guides, demonstrating exceptional leadership, community service, and character.</p>
+            </div>
+            <div class="entry">
+                <h3>International Maths Olympiads</h3>
+                <p class="company">Multiple Certificates</p>
+                <p>Awarded multiple certificates for strong performance in International Maths Olympiads, showcasing advanced analytical and problem-solving abilities.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><span>🤝</span> Volunteer Experience</h2>
+            <div class="entry">
+                <h3>Member</h3>
+                <p class="company">Shri Ram Janki Seva Samiti (SRJSS)</p>
+                <p>Actively contribute to a non-governmental organization focused on societal development and community welfare initiatives.</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2025 Kulshreshtha Sharma. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
